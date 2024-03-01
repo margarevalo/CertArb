@@ -92,58 +92,63 @@ export default function Home() {
   //</Withdraw>
 return (
     <main   style={{
-      display: 'flex',
-      flexDirection: 'column',
       alignItems: 'center',
+      display: 'flex',
       justifyContent: 'center',
       minHeight: '100vh',
-      backgroundImage: `url('https://www.dexerto.com/cdn-image/wp-content/uploads/2024/02/27/mrfresh-cat-bounty-outrage.jpg?width=828&quality=75&format=auto')`,
+      flexDirection: 'column',
       backgroundSize: 'cover',
+      backgroundImage: `url('https://img.freepik.com/free-vector/gradient-rainbow-glitter-background_52683-97583.jpg?w=996&t=st=1709217399~exp=1709217999~hmac=ed155792ae65e4136fa554c2c26ae8a6079b2662fc42359fc0d75532b32e551f')`,
       backgroundPosition: 'center',}}>
           <button onClick={() => {connectWallet();}}
-        className="p-3 bg-slate-800 text-white rounded"
+        className="p-3 bg-green-200 text-white rounded"
       >
         {walletKey != "" ? walletKey : " Connect wallet"}
       </button>
+      <br></br>\
 
-      <div>
+      <div className="flex">
+      <div className="flex-1 text-center bg-yellow-200 p-6 rounded-md flex flex-col justify-center items-center ">
       <br></br>
       <form>
-        <label> Input Amount To Mint</label><br></br>
+        <label> Amount of Mint</label><br></br>
         </form>
       <input
-        type="number"
+        type="text"
         value = {mintingAmount || ""}
         onChange = {(e) => mintAmountChange(e)}
         style={{color:"Black"}}
       />
+       <br></br>
       <button 
         onClick={() => {mintCoin();}}
-        className="p-3 bg-slate-800 text-white rounded"
+        className="p-3 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 via-green-500 to-blue-500 via-indigo-500 to-purple-500 text-black rounded rounded"
       >
-        {"Mint Token"}
+        {"Mint"}
       </button> 
       
     </div>
     <br></br>
 
-<div>
+<div className="flex-1 text-center bg-pink-200 p-4 rounded-md flex flex-col justify-center items-center">
 <form>
-    <label> Input Amount To Stake</label><br></br>
+    <label> Amount of Stake </label><br></br>
     </form>
   <input
-    type="number"
+    type="text"
     value = {stakingAmount || ""}
     onChange = {(e) => stakeAmountChange(e)}
     style={{color:"Black"}}
   />
+  <br></br>
  
   <button 
     onClick={stakeCoin}
-    className="p-3 bg-slate-800 text-white rounded"
+    className="p-3 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 via-green-500 to-blue-500 via-indigo-500 to-purple-500 text-black rounded"
   >
-    {"Stake It"}
+    {"Stake"}
   </button> 
+  </div>
 </div>
 
 <div>
@@ -151,7 +156,7 @@ return (
     <br></br>
     <button 
         onClick={withdrawCoin}
-        className="p-3 bg-slate-800 text-white rounded"
+        className="p-3 bg-blue-500 text-white rounded"
       >
         {"Withdraw"}
       </button> 
