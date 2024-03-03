@@ -110,10 +110,14 @@ return (
   <div className="flex">
     {['Mint', 'Stake'].map((action, index) => {
       const bgColor = index === 0 ? 'yellow' : 'pink';
-      const paddingSize = index === 0 ? '6' : '4';
+      const paddingSize = index === 0 ? '6' : '6';
+
+      const boxStyle = {
+        backgroundColor: bgColor,
+      };
 
       return (
-        <div key={index} className={`flex-1 text-center bg-${bgColor}-200 p-${paddingSize} rounded-md flex flex-col justify-center items-center `}>
+        <div key={index} className={`flex-1 text-center p-${paddingSize} rounded-md flex flex-col justify-center items-center`} style={boxStyle}>
           <br></br>
           <form>
             <label> Amount of {action}</label><br></br>
@@ -127,7 +131,7 @@ return (
           <br></br>
           <button
             onClick={() => index === 0 ? handleMint() : handleStake()}
-            className={`p-3 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 via-green-500 to-blue-500 via-indigo-500 to-purple-500 text-black rounded rounded`}
+            className="p-3 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 via-green-500 to-blue-500 via-indigo-500 to-purple-500 text-black rounded"
           >
             {action}
           </button>
@@ -147,5 +151,6 @@ return (
     </button>
   </div>
 </main>
+
   );
 }
