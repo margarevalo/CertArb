@@ -26,7 +26,7 @@ export default function Home() {
     const signer = await provider.getSigner();
     const contract = getContract(signer);
     try {
-      const tx = await contract.mint(signer, mintingAmount);
+      const tx = await contract.MTKNSmint(signer, mintingAmount);
       await tx.wait();
       setSubmitted(true);
       setTransactionHash(tx.hash);
@@ -52,7 +52,7 @@ export default function Home() {
     const signer = await provider.getSigner();
     const contract = getContract(signer);
     try {
-      const tx = await contract.stake(stakingAmount);
+      const tx = await contract.MTKNSstake(stakingAmount);
       await tx.wait();
       setSubmitted(true);
       setTransactionHash(tx.hash);
